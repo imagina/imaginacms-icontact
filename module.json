@@ -1,0 +1,12 @@
+
+{
+    "name": "Icontact",
+    "alias": "icontact",
+    "description": "manage icontact",
+    "keywords": ["icontact"],
+    "priority": 0,
+    "providers": [
+        "Modules\\Icontact\\Providers\\IcontactServiceProvider"
+    ],
+    "files": []
+}
