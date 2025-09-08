@@ -37,6 +37,7 @@ class Item extends CoreModel
     'type_id',
     'is_enable',
     'country_code',
+    'notebook_id'
   ];
 
   protected $appends = [

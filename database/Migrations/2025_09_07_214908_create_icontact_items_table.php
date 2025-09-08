@@ -21,7 +21,7 @@ return new class extends Migration {
       $table->string('country_code')->nullable();;
       $table->integer('notebook_id')->unsigned();
       $table->foreign('notebook_id')->references('id')->on('icontact__notebooks')->onDelete('cascade');
-      $table->unique(['system_name', 'notebook_id']);
+      $table->unique(['system_name', 'notebook_id', 'type_id']);
       // Audit fields
       $table->timestamps();
       $table->auditStamps();

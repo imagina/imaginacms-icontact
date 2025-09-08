@@ -18,8 +18,8 @@ return new class extends Migration {
       $table->string('system_name');
       $table->boolean('is_enable')->default(true);
       $table->boolean('is_public')->default(false);
-      $table->string('entity_type')->nullable();
-      $table->integer('entity_id')->nullable();
+      $table->string('entity_type')->default('__global__');
+      $table->integer('entity_id')->default(0);
       $table->unique(['system_name', 'entity_type', 'entity_id']);
       // Audit fields
       $table->timestamps();

@@ -7,6 +7,7 @@ use Imagina\Icore\Models\CoreStaticModel;
 class ItemType extends CoreStaticModel
 {
   const PHONE = 0;
+  const WHATSAPP = 1;
   const EMAIL = 2;
   const FACEBOOK = 3;
   const TWITTER = 4;
@@ -25,6 +26,11 @@ class ItemType extends CoreStaticModel
         'id' => self::PHONE,
         'title' => itrans('icontact::itemType.phone'),
         'icon' => 'fa-solid fa-phone'
+      ],
+      self::WHATSAPP => [
+        'id' => self::WHATSAPP,
+        'title' => 'Whatsapp',
+        'icon' => 'fa-brands fa-whatsapp'
       ],
       self::EMAIL => [
         'id' => self::EMAIL,

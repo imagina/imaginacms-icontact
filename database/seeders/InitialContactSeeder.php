@@ -18,8 +18,6 @@ class InitialContactSeeder extends Seeder
       $notebook = $notebookRepository->create(
         [
           'system_name' => 'main_contact',
-          'entity_type' => null,
-          'entity_id' => null,
           'is_enable' => true,
           'is_public' => true,
           'es' => ['title' => 'Libreta de contacto'],
@@ -35,12 +33,28 @@ class InitialContactSeeder extends Seeder
           'country_code' => 57,
           'es' => [
             'title' => 'Teléfono principal',
-            'value' => '+57 300 000 0000',
+            'value' => '1000000000',
             'message' => 'Línea general',
           ],
           'en' => [
             'title' => 'Primary phone',
-            'value' => '+57 300 000 0000',
+            'value' => '1000000000',
+            'message' => 'General line',
+          ],
+        ],
+        [
+          'system_name' => 'whatsapp_primary',
+          'type_id' => ItemType::WHATSAPP,
+          'is_enable' => true,
+          'country_code' => 57,
+          'es' => [
+            'title' => 'Whatsapp principal',
+            'value' => '1000000000',
+            'message' => 'Línea general',
+          ],
+          'en' => [
+            'title' => 'Primary Whatsapp',
+            'value' => '1000000000',
             'message' => 'General line',
           ],
         ],
@@ -140,70 +154,6 @@ class InitialContactSeeder extends Seeder
             'message' => null,
           ],
         ],
-        [
-          'system_name' => 'linkedin',
-          'type_id' => ItemType::LINKEDIN,
-          'is_enable' => true,
-          'country_code' => null,
-          'es' => [
-            'title' => 'LinkedIn',
-            'value' => 'https://www.linkedin.com/company/example',
-            'message' => null,
-          ],
-          'en' => [
-            'title' => 'LinkedIn',
-            'value' => 'https://www.linkedin.com/company/example',
-            'message' => null,
-          ],
-        ],
-        [
-          'system_name' => 'google',
-          'type_id' => ItemType::GOOGLE,
-          'is_enable' => true,
-          'country_code' => null,
-          'es' => [
-            'title' => 'Google',
-            'value' => 'https://google.com/search?q=example',
-            'message' => null,
-          ],
-          'en' => [
-            'title' => 'Google',
-            'value' => 'https://google.com/search?q=example',
-            'message' => null,
-          ],
-        ],
-        [
-          'system_name' => 'pinterest',
-          'type_id' => ItemType::PINTEREST,
-          'is_enable' => true,
-          'country_code' => null,
-          'es' => [
-            'title' => 'Pinterest',
-            'value' => 'https://www.pinterest.com/example',
-            'message' => null,
-          ],
-          'en' => [
-            'title' => 'Pinterest',
-            'value' => 'https://www.pinterest.com/example',
-            'message' => null,
-          ],
-        ],
-        [
-          'system_name' => 'flickr',
-          'type_id' => ItemType::FLICKR,
-          'is_enable' => true,
-          'country_code' => null,
-          'es' => [
-            'title' => 'Flickr',
-            'value' => 'https://www.flickr.com/photos/example',
-            'message' => null,
-          ],
-          'en' => [
-            'title' => 'Flickr',
-            'value' => 'https://www.flickr.com/photos/example',
-            'message' => null,
-          ],
-        ]
       ];
 
       foreach ($items as $payload) {
