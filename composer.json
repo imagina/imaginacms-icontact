@@ -1,6 +1,7 @@
 {
     "name": "imagina/icontact-module",
     "description": "Imagina Icontact laravel module",
+    "type": "laravel-module",
     "authors": [
         {
             "name": "Imagina Colombia",
