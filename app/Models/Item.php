@@ -5,7 +5,7 @@ namespace Modules\Icontact\Models;
 use Astrotomic\Translatable\Translatable;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Imagina\Icore\Models\CoreModel;
-use Modules\Icontact\Models\ItemType;
+
 class Item extends CoreModel
 {
   use Translatable;
@@ -34,8 +34,10 @@ class Item extends CoreModel
   ];
   protected $fillable = [
     'system_name',
-    'type_id',
     'is_enable',
+    'entity_type',
+    'entity_id',
+    'type_id',
     'country_code',
     'notebook_id'
   ];

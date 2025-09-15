@@ -3,28 +3,16 @@
 namespace Modules\Icontact\Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use Modules\Icontact\Models\Notebook;
+use Modules\Icontact\Models\Item;
 use Modules\Icontact\Models\ItemType;
 use Modules\Icontact\Repositories\ItemRepository;
-use Modules\Icontact\Repositories\NotebookRepository;
 
 class InitialContactSeeder extends Seeder
 {
   public function run(): void
   {
-    if (Notebook::count() === 0) {
-      $notebookRepository = app(NotebookRepository::class);
+    if (Item::count() === 0) {
       $itemRepository = app(ItemRepository::class);
-      $notebook = $notebookRepository->create(
-        [
-          'system_name' => 'main_contact',
-          'is_enable' => true,
-          'is_public' => true,
-          'es' => ['title' => 'Libreta de contacto'],
-          'en' => ['title' => 'Default Contact Book'],
-        ]
-      );
-
       $items = [
         [
           'system_name' => 'phone_primary',
@@ -157,7 +145,6 @@ class InitialContactSeeder extends Seeder
       ];
 
       foreach ($items as $payload) {
-        $payload['notebook_id'] = $notebook->id;
         $itemRepository->create($payload);
       }
     }

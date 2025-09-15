@@ -8,16 +8,11 @@ use Nwidart\Modules\Traits\PathNamespace;
 use RecursiveDirectoryIterator;
 use RecursiveIteratorIterator;
 // Bindings
-use Modules\Icontact\Repositories\Eloquent\EloquentNotebookRepository;
-use Modules\Icontact\Repositories\Cache\CacheNotebookDecorator;
-use Modules\Icontact\Repositories\NotebookRepository;
-use Modules\Icontact\Models\Notebook;
 use Modules\Icontact\Repositories\Eloquent\EloquentItemRepository;
 use Modules\Icontact\Repositories\Cache\CacheItemDecorator;
 use Modules\Icontact\Repositories\ItemRepository;
 use Modules\Icontact\Models\Item;
 // append-use-bindings
-
 
 
 class IcontactServiceProvider extends ServiceProvider
@@ -166,14 +161,7 @@ class IcontactServiceProvider extends ServiceProvider
 
     private function registerBindings(): void
     {
-        $this->app->bind(NotebookRepository::class, function () {
-    $repository = new EloquentNotebookRepository(new Notebook());
-
-    return config('app.cache')
-        ? new CacheNotebookDecorator($repository)
-        : $repository;
-});
-$this->app->bind(ItemRepository::class, function () {
+        $this->app->bind(ItemRepository::class, function () {
     $repository = new EloquentItemRepository(new Item());
 
     return config('app.cache')
@@ -181,7 +169,6 @@ $this->app->bind(ItemRepository::class, function () {
         : $repository;
 });
 // append-bindings
-
 
     }
 }

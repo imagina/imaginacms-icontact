@@ -16,12 +16,12 @@ return new class extends Migration {
       $table->increments('id');
       // Your fields...
       $table->string('system_name');
-      $table->tinyInteger('type_id')->default(0)->unsigned();
       $table->boolean('is_enable')->default(true);
+      $table->string('entity_type')->default('__global__');
+      $table->integer('entity_id')->default(0);
+      $table->tinyInteger('type_id')->default(0)->unsigned();
       $table->string('country_code')->nullable();;
-      $table->integer('notebook_id')->unsigned();
-      $table->foreign('notebook_id')->references('id')->on('icontact__notebooks')->onDelete('cascade');
-      $table->unique(['system_name', 'notebook_id', 'type_id']);
+      $table->unique(['system_name', 'entity_type', 'entity_id']);
       // Audit fields
       $table->timestamps();
       $table->auditStamps();
