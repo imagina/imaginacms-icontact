@@ -1,6 +1,6 @@
 {
-    "name": "imagina/icontact",
-    "description": "",
+    "name": "imagina/icontact-module",
+    "description": "Imagina Icontact laravel module",
     "authors": [
         {
             "name": "Imagina Colombia",
@@ -19,7 +19,7 @@
         "psr-4": {
             "Modules\\Icontact\\": "app/",
             "Modules\\Icontact\\Database\\Factories\\": "database/factories/",
-            "Modules\\Icontact\\Database\\Seeders\\": "database/seeders/"
+            "Modules\\Icontact\\Database\\Seeders\\": "database/Seeders/"
         }
     },
     "autoload-dev": {
