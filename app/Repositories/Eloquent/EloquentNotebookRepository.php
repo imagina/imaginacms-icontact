@@ -48,10 +48,14 @@ class EloquentNotebookRepository extends EloquentCoreRepository implements Noteb
      *
      */
 
-    // Filter only public notebooks without session
+    // Filter only public notebooks without the session
     if (!Auth::user()) {
       $query->where('is_public', true);
     };
+
+    if (!isset($filter->entityType) || empty($filter->entityId)) {
+      $query->where('entity_type', '__global__')->where('entity_id', '0');
+    }
 
     //Response
     return $query;
