@@ -12,7 +12,7 @@ Route::prefix('/icontact/v1')->group(function () {
     'prefix' => 'items',
     'controller' => ItemApiController::class,
     'permission' => 'icontact.items',
-    //'middleware' => ['create' => [], 'index' => [], 'show' => [], 'update' => [], 'delete' => [], 'restore' => []],
+    'middleware' => ['index' => [], 'show' => []],
     // 'customRoutes' => [ // Include custom routes if needed
     //  [
     //    'method' => 'post', // get,post,put....
